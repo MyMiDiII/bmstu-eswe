@@ -118,37 +118,6 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="2">
-           <widget class="QDoubleSpinBox" name="dsbRELY">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="maximum">
-             <double>2.000000000000000</double>
-            </property>
-            <property name="singleStep">
-             <double>0.050000000000000</double>
-            </property>
-           </widget>
-          </item>
           <item row="0" column="0">
            <widget class="QLabel" name="lblRELY">
             <property name="sizePolicy">
@@ -1298,7 +1267,7 @@
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QGroupBox" name="groupBox">
+        <widget class="QGroupBox" name="gbMode">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -1315,7 +1284,7 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_7">
           <item row="0" column="1">
-           <widget class="QComboBox" name="comboBox">
+           <widget class="QComboBox" name="cbMode">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1336,7 +1305,7 @@
            </widget>
           </item>
           <item row="0" column="4">
-           <widget class="QSpinBox" name="spinBox">
+           <widget class="QSpinBox" name="sbSize">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1360,7 +1329,7 @@
            </widget>
           </item>
           <item row="0" column="2">
-           <spacer name="horizontalSpacer">
+           <spacer name="hSpaceMode">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -1376,7 +1345,7 @@
            </spacer>
           </item>
           <item row="0" column="3">
-           <widget class="QLabel" name="label_2">
+           <widget class="QLabel" name="lblSize">
             <property name="font">
              <font>
               <pointsize>10</pointsize>
@@ -1388,7 +1357,7 @@
            </widget>
           </item>
           <item row="0" column="5">
-           <widget class="QLabel" name="label_3">
+           <widget class="QLabel" name="lblKLOC">
             <property name="font">
              <font>
               <pointsize>10</pointsize>
@@ -1400,7 +1369,7 @@
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="lblMode">
             <property name="font">
              <font>
               <pointsize>10</pointsize>
@@ -1415,7 +1384,7 @@
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QGroupBox" name="groupBox_5">
+        <widget class="QGroupBox" name="gbEAF">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
@@ -1426,7 +1395,7 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_11">
           <item row="0" column="0">
-           <widget class="QLabel" name="label_4">
+           <widget class="QLabel" name="lblEAF">
             <property name="font">
              <font>
               <pointsize>10</pointsize>
@@ -1438,7 +1407,7 @@
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox">
+           <widget class="QDoubleSpinBox" name="dsbEAF">
             <property name="enabled">
              <bool>false</bool>
             </property>
@@ -1465,7 +1434,7 @@
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QGroupBox" name="groupBox_2">
+     <widget class="QGroupBox" name="gbResultsGeneral">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -1482,7 +1451,7 @@
       </property>
       <layout class="QGridLayout" name="gridLayout_8">
        <item row="0" column="1">
-        <widget class="QGroupBox" name="groupBox_4">
+        <widget class="QGroupBox" name="gbTime">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
@@ -1493,7 +1462,10 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_10">
           <item row="0" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_4">
+           <widget class="QDoubleSpinBox" name="dsbC2">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="maximumSize">
              <size>
               <width>225</width>
@@ -1503,7 +1475,10 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_5">
+           <widget class="QDoubleSpinBox" name="dsbP2">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="maximumSize">
              <size>
               <width>225</width>
@@ -1513,14 +1488,17 @@
            </widget>
           </item>
           <item row="4" column="0">
-           <widget class="QLabel" name="label_13">
+           <widget class="QLabel" name="lblTimePlan">
             <property name="text">
              <string>+ Планирование (36%)</string>
             </property>
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_9">
+           <widget class="QDoubleSpinBox" name="dsbTimeBase">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="maximumSize">
              <size>
               <width>225</width>
@@ -1530,14 +1508,17 @@
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QLabel" name="label_7">
+           <widget class="QLabel" name="lblC2">
             <property name="text">
              <string>C2</string>
             </property>
            </widget>
           </item>
           <item row="6" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
+           <widget class="QDoubleSpinBox" name="dsbTimeTotal">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="maximumSize">
              <size>
               <width>225</width>
@@ -1547,14 +1528,17 @@
            </widget>
           </item>
           <item row="2" column="0" colspan="2">
-           <widget class="Line" name="line_3">
+           <widget class="Line" name="line03">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_10">
+           <widget class="QDoubleSpinBox" name="dsbTimePlan">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="maximumSize">
              <size>
               <width>225</width>
@@ -1564,28 +1548,28 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="label_8">
+           <widget class="QLabel" name="lblP2">
             <property name="text">
              <string>P2</string>
             </property>
            </widget>
           </item>
           <item row="6" column="0">
-           <widget class="QLabel" name="label_14">
+           <widget class="QLabel" name="lblTimeTotal">
             <property name="text">
              <string>Всего</string>
             </property>
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="label_12">
+           <widget class="QLabel" name="lblTimeBase">
             <property name="text">
              <string>Время</string>
             </property>
            </widget>
           </item>
           <item row="5" column="0" colspan="2">
-           <widget class="Line" name="line_4">
+           <widget class="Line" name="line04">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -1595,7 +1579,7 @@
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QGroupBox" name="groupBox_3">
+        <widget class="QGroupBox" name="gbEffort">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
@@ -1606,21 +1590,24 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_9">
           <item row="6" column="0">
-           <widget class="QLabel" name="label_11">
+           <widget class="QLabel" name="lblEffortTotal">
             <property name="text">
              <string>Всего</string>
             </property>
            </widget>
           </item>
           <item row="2" column="0" colspan="2">
-           <widget class="Line" name="line_2">
+           <widget class="Line" name="line01">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_7">
+           <widget class="QDoubleSpinBox" name="dsbEffortPlan">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="maximumSize">
              <size>
               <width>225</width>
@@ -1630,7 +1617,10 @@
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
+           <widget class="QDoubleSpinBox" name="dsbP1">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="maximumSize">
              <size>
               <width>225</width>
@@ -1640,21 +1630,24 @@
            </widget>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="label_9">
+           <widget class="QLabel" name="lblEffortBase">
             <property name="text">
              <string>Трудозатраты</string>
             </property>
            </widget>
           </item>
           <item row="4" column="0">
-           <widget class="QLabel" name="label_10">
+           <widget class="QLabel" name="lblEffortPlan">
             <property name="text">
              <string>+ Планирование (8%)</string>
             </property>
            </widget>
           </item>
           <item row="6" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_8">
+           <widget class="QDoubleSpinBox" name="dsbEffortTotal">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="maximumSize">
              <size>
               <width>225</width>
@@ -1664,7 +1657,10 @@
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_6">
+           <widget class="QDoubleSpinBox" name="dsbEffortBase">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="maximumSize">
              <size>
               <width>225</width>
@@ -1674,21 +1670,24 @@
            </widget>
           </item>
           <item row="5" column="0" colspan="2">
-           <widget class="Line" name="line">
+           <widget class="Line" name="line02">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QLabel" name="label_5">
+           <widget class="QLabel" name="lblC1">
             <property name="text">
              <string>C1</string>
             </property>
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+           <widget class="QDoubleSpinBox" name="dsbC1">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
             <property name="maximumSize">
              <size>
               <width>225</width>
@@ -1698,7 +1697,7 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="label_6">
+           <widget class="QLabel" name="lblP1">
             <property name="text">
              <string>P1</string>
             </property>
@@ -1719,7 +1718,7 @@
        </sizepolicy>
       </property>
       <property name="title">
-       <string>GroupBox</string>
+       <string>Результат</string>
       </property>
      </widget>
     </item>
