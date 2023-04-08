@@ -58,26 +58,51 @@ class MainWindow(QtWidgets.QMainWindow):
                 self.ui.dsbLEXP
                 ]
 
+        self.ui.sbSize.valueChanged.connect(self.updateSize)
+
         self.__init_drivers_comboxes()
         self.__init_mode_comboxes()
         self.__init_results()
 
-        self.ui.sbSize.valueChanged.connect(self.updateSize)
 
     def updateSize(self):
         self.cocomo.set_size(self.ui.sbSize.value())
+        #self.updateEffortBase()
 
     def __init_results(self):
-        self.ui.dsbC1.valueChanged.connect(self.updateEffort)
-        self.ui.dsbP1.valueChanged.connect(self.updateEffort)
-        self.ui.sbSize.valueChanged.connect(self.updateEffort)
-        self.ui.dsbEAF.valueChanged.connect(self.updateEffort)
+        self.ui.dsbC1.valueChanged.connect(self.updateEffortBase)
+        self.ui.dsbP1.valueChanged.connect(self.updateEffortBase)
+        self.ui.sbSize.valueChanged.connect(self.updateEffortBase)
+        self.ui.dsbEAF.valueChanged.connect(self.updateEffortBase)
 
+        self.ui.dsbC2.valueChanged.connect(self.updateTimeBase)
+        self.ui.dsbP2.valueChanged.connect(self.updateTimeBase)
 
-    def updateEffort(self):
+        self.ui.dsbEffortBase.valueChanged.connect(self.updateAll)
+
+    def updateEffortBase(self):
         effort_base = self.cocomo.get_results()["effort_base"]
         self.ui.dsbEffortBase.setValue(effort_base)
 
+    def updateTimeBase(self):
+        time_base = self.cocomo.get_results()["time_base"]
+        self.ui.dsbTimeBase.setValue(time_base)
+
+    def updateAll(self):
+        results = self.cocomo.get_results()
+
+        effort_plan = results["effort_plan"]
+        effort_total = results["effort_total"]
+
+        time_base  = results["time_base"]
+        time_plan  = results["time_plan"]
+        time_total = results["time_total"]
+
+        self.ui.dsbEffortPlan.setValue(effort_plan)
+        self.ui.dsbEffortTotal.setValue(effort_total)
+        self.ui.dsbTimeBase.setValue(time_base)
+        self.ui.dsbTimePlan.setValue(time_plan)
+        self.ui.dsbTimeTotal.setValue(time_total)
 
     def __init_mode_comboxes(self):
         modes = [
