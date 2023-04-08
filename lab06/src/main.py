@@ -11,10 +11,10 @@ class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
 
-        self.cocomo = Cocomo(40, CocomoModes.ORGANIC)
-
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        self.cocomo = Cocomo(self.ui.sbSize.value(), CocomoModes.ORGANIC)
 
         self.drivers_comboxes = [
                 self.ui.cbRELY,
@@ -60,6 +60,23 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.__init_drivers_comboxes()
         self.__init_mode_comboxes()
+        self.__init_results()
+
+        self.ui.sbSize.valueChanged.connect(self.updateSize)
+
+    def updateSize(self):
+        self.cocomo.set_size(self.ui.sbSize.value())
+
+    def __init_results(self):
+        self.ui.dsbC1.valueChanged.connect(self.updateEffort)
+        self.ui.dsbP1.valueChanged.connect(self.updateEffort)
+        self.ui.sbSize.valueChanged.connect(self.updateEffort)
+        self.ui.dsbEAF.valueChanged.connect(self.updateEffort)
+
+
+    def updateEffort(self):
+        effort_base = self.cocomo.get_results()["effort_base"]
+        self.ui.dsbEffortBase.setValue(effort_base)
 
 
     def __init_mode_comboxes(self):
@@ -118,16 +135,17 @@ class MainWindow(QtWidgets.QMainWindow):
 
         for i, combox in enumerate(self.drivers_comboxes):
             combox.addItems(cbItems[i][0])
-            f = lambda y, x=i: self.syncDriverSB(x,
+            f = lambda y, x=i: self.syncDriverSB(
                        self.drivers_comboxes[x],
                        self.drivers_spinboxes[x],
                        Driver(x),
                        cbItems[x][1])
             combox.currentIndexChanged.connect(f)
             combox.setCurrentIndex(cbItems[i][1])
+            f(0, i)
 
 
-    def syncDriverSB(self, x, combox, spinbox, driver, nominal):
+    def syncDriverSB(self, combox, spinbox, driver, nominal):
         index = combox.currentIndex()
 
         self.cocomo.set_driver(driver, Level(2 - nominal + index))

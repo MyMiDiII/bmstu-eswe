@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1887</width>
-    <height>635</height>
+    <height>637</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1518,6 +1518,9 @@
               <height>16777215</height>
              </size>
             </property>
+            <property name="maximum">
+             <double>10000.000000000000000</double>
+            </property>
            </widget>
           </item>
           <item row="0" column="0">
@@ -1538,6 +1541,9 @@
               <height>16777215</height>
              </size>
             </property>
+            <property name="maximum">
+             <double>10000.000000000000000</double>
+            </property>
            </widget>
           </item>
           <item row="2" column="0" colspan="2">
@@ -1557,6 +1563,9 @@
               <width>225</width>
               <height>16777215</height>
              </size>
+            </property>
+            <property name="maximum">
+             <double>10000.000000000000000</double>
             </property>
            </widget>
           </item>
@@ -1627,6 +1636,9 @@
               <height>16777215</height>
              </size>
             </property>
+            <property name="maximum">
+             <double>10000.000000000000000</double>
+            </property>
            </widget>
           </item>
           <item row="1" column="1">
@@ -1667,6 +1679,9 @@
               <height>16777215</height>
              </size>
             </property>
+            <property name="maximum">
+             <double>10000.000000000000000</double>
+            </property>
            </widget>
           </item>
           <item row="3" column="1">
@@ -1679,6 +1694,9 @@
               <width>225</width>
               <height>16777215</height>
              </size>
+            </property>
+            <property name="maximum">
+             <double>10000.000000000000000</double>
             </property>
            </widget>
           </item>
