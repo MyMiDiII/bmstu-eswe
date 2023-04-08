@@ -43,6 +43,7 @@ class Cocomo:
     def get_results(self):
         return {
                 "eaf" : self.eaf,
+                "mode" : self.mode,
                 "effort_base" : self.effort_base,
                 "time_base" : self.time_base
                 }
@@ -57,3 +58,5 @@ class Cocomo:
     def get_driver(self, driver):
         return self.drivers[driver]
 
+    def set_mode(self, mode):
+        self.mode = MODES[mode]

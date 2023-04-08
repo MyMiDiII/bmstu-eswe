@@ -59,6 +59,31 @@ class MainWindow(QtWidgets.QMainWindow):
                 ]
 
         self.__init_drivers_comboxes()
+        self.__init_mode_comboxes()
+
+
+    def __init_mode_comboxes(self):
+        modes = [
+                "Обычный",
+                "Промежуточный",
+                "Встроенный"
+                ]
+
+        self.ui.cbMode.addItems(modes)
+        self.ui.cbMode.currentIndexChanged.connect(self.changeCocomoCoefs)
+        self.changeCocomoCoefs()
+
+
+    def changeCocomoCoefs(self):
+        modeIndex = self.ui.cbMode.currentIndex()
+        self.cocomo.set_mode(CocomoModes(modeIndex))
+
+        mode = self.cocomo.get_results()["mode"]
+
+        self.ui.dsbC1.setValue(mode.c1)
+        self.ui.dsbP1.setValue(mode.p1)
+        self.ui.dsbC2.setValue(mode.c2)
+        self.ui.dsbP2.setValue(mode.p2)
 
 
     def __init_drivers_comboxes(self):
@@ -67,7 +92,7 @@ class MainWindow(QtWidgets.QMainWindow):
                 "Низкий",
                 "Номинальный",
                 "Высокий",
-                "Очень высокий",
+                "Очень высокий"
                 ]
         cbItems = [
                 [baseText,      2],
