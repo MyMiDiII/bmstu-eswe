@@ -1,6 +1,6 @@
 import math
 
-from constants import *
+from cocomo.constants import *
 
 class Cocomo:
     def __init__(self, kloc, mode):
@@ -46,4 +46,14 @@ class Cocomo:
                 "effort_base" : self.effort_base,
                 "time_base" : self.time_base
                 }
+
+    def set_drivers(self, drivers: dict):
+        for key, values in drivers.items():
+            self.drivers[key] = value
+
+    def set_driver(self, driver, level):
+        self.drivers[driver] = DriversCoeffs.get_coef(driver, level)
+
+    def get_driver(self, driver):
+        return self.drivers[driver]
 

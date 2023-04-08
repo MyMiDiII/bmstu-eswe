@@ -4,12 +4,14 @@ from PyQt5 import QtWidgets
 from gui.mainwindow import Ui_MainWindow
 
 from cocomo.constants import *
+from cocomo.cocomo import *
 
-import time
 
 class MainWindow(QtWidgets.QMainWindow):
     def __init__(self, *args, **kwargs):
         super(MainWindow, self).__init__(*args, **kwargs)
+
+        self.cocomo = Cocomo(40, CocomoModes.ORGANIC)
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -58,12 +60,6 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.__init_drivers_comboxes()
 
-        self.ui.cbRELY.currentIndexChanged.connect(self.check)
-
-    def check(self):
-        print("check")
-        print(self.ui.cbRELY)
-        print(self.ui.cbRELY.currentIndex())
 
     def __init_drivers_comboxes(self):
         baseText = [
@@ -108,8 +104,12 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def syncDriverSB(self, x, combox, spinbox, driver, nominal):
         index = combox.currentIndex()
-        spinbox.setValue(DriversCoeffs.get_coef(driver,
-                                                Level(2 - nominal + index)))
+
+        self.cocomo.set_driver(driver, Level(2 - nominal + index))
+        value = self.cocomo.get_driver(driver)
+
+        spinbox.setValue(value)
+        self.ui.dsbEAF.setValue(self.cocomo.get_results()["eaf"])
 
 
 def main():
