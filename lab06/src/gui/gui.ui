@@ -1410,7 +1410,7 @@
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QGroupBox" name="groupBox_2">
+        <widget class="QGroupBox" name="gbTask1">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1422,7 +1422,7 @@
          </property>
          <layout class="QGridLayout" name="gridLayout_13">
           <item row="0" column="0">
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="btnStudy">
             <property name="text">
              <string>Исследовать</string>
             </property>
@@ -1432,7 +1432,7 @@
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QGroupBox" name="groupBox">
+        <widget class="QGroupBox" name="gbSize">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>

@@ -5,6 +5,7 @@ from gui.mainwindow import Ui_MainWindow
 
 from cocomo.constants import *
 from cocomo.cocomo import *
+from study.study import *
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -63,6 +64,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.__init_drivers_comboxes()
         self.__init_mode_comboxes()
         self.__init_results()
+
+        self.ui.btnStudy.clicked.connect(self.runStudy)
 
 
     def updateSize(self):
@@ -178,6 +181,11 @@ class MainWindow(QtWidgets.QMainWindow):
 
         spinbox.setValue(value)
         self.ui.dsbEAF.setValue(self.cocomo.get_results()["eaf"])
+
+    def runStudy(self):
+        StudySWCocomo(250, CocomoModes.SEMIDETACHED).run(Level.NOMINAL)
+        StudySWCocomo(250, CocomoModes.SEMIDETACHED).run(Level.HIGH)
+        StudySWCocomo(250, CocomoModes.SEMIDETACHED).run(Level.VERY_HIGH)
 
 
 def main():
