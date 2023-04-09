@@ -1,7 +1,7 @@
 import sys
 
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QHeaderView
+from PyQt5.QtWidgets import QHeaderView, QTableWidgetItem
 from gui.mainwindow import Ui_MainWindow
 
 from cocomo.constants import *
@@ -66,6 +66,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.__init_mode_comboxes()
         self.__init_results()
 
+        self.ui.dsbEffortBase.valueChanged.connect(self.updateTables)
         self.ui.btnStudy.clicked.connect(self.runStudy)
 
         self.ui.twStages.horizontalHeader(
@@ -84,9 +85,30 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.twActivities.verticalHeader(
                 ).setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
 
+    def updateTables(self):
+        results = self.cocomo.get_results()
+        effort_base = results["effort_base"]
+        time_base = results["time_base"]
+        effort_total = results["effort_total"]
+
+        table = self.ui.twStages
+        for row in range(table.rowCount()):
+            proc = int(table.item(row, 0).text())
+            item = QTableWidgetItem("{:.2f}".format(effort_base * proc / 100))
+            table.setItem(row, 1, item)
+
+            proc = int(table.item(row, 2).text())
+            item = QTableWidgetItem("{:.2f}".format(time_base * proc / 100))
+            table.setItem(row, 3, item)
+
+        table = self.ui.twActivities
+        for row in range(table.rowCount()):
+            proc = int(table.item(row, 0).text())
+            item = QTableWidgetItem("{:.2f}".format(effort_total * proc / 100))
+            table.setItem(row, 1, item)
+
     def updateSize(self):
         self.cocomo.set_size(self.ui.sbSize.value())
-        #self.updateEffortBase()
 
     def __init_results(self):
         self.ui.dsbC1.valueChanged.connect(self.updateEffortBase)

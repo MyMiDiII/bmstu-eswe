@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>2474</width>
-    <height>850</height>
+    <height>985</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1594,7 +1594,7 @@
              </size>
             </property>
             <property name="maximum">
-             <double>10000.000000000000000</double>
+             <double>1000000.000000000000000</double>
             </property>
            </widget>
           </item>
@@ -1649,7 +1649,7 @@
              </size>
             </property>
             <property name="maximum">
-             <double>10000.000000000000000</double>
+             <double>1000000.000000000000000</double>
             </property>
            </widget>
           </item>
@@ -1691,7 +1691,7 @@
              </size>
             </property>
             <property name="maximum">
-             <double>10000.000000000000000</double>
+             <double>100000.000000000000000</double>
             </property>
            </widget>
           </item>
@@ -1763,7 +1763,7 @@
              </size>
             </property>
             <property name="maximum">
-             <double>10000.000000000000000</double>
+             <double>1000.000000000000000</double>
             </property>
            </widget>
           </item>
@@ -1832,7 +1832,7 @@
              </size>
             </property>
             <property name="maximum">
-             <double>10000.000000000000000</double>
+             <double>1000.000000000000000</double>
             </property>
            </widget>
           </item>
@@ -1861,7 +1861,7 @@
              </size>
             </property>
             <property name="maximum">
-             <double>10000.000000000000000</double>
+             <double>1000.000000000000000</double>
             </property>
            </widget>
           </item>
@@ -2025,12 +2025,12 @@
             </column>
             <item row="0" column="0">
              <property name="text">
-              <string>(+8)</string>
+              <string>8</string>
              </property>
             </item>
             <item row="0" column="2">
              <property name="text">
-              <string>(+36)</string>
+              <string>36</string>
              </property>
             </item>
             <item row="1" column="0">
