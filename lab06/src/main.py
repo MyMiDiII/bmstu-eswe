@@ -1,6 +1,7 @@
 import sys
 
 from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QHeaderView
 from gui.mainwindow import Ui_MainWindow
 
 from cocomo.constants import *
@@ -67,6 +68,21 @@ class MainWindow(QtWidgets.QMainWindow):
 
         self.ui.btnStudy.clicked.connect(self.runStudy)
 
+        self.ui.twStages.horizontalHeader(
+                ).setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        self.ui.twStages.horizontalHeader(
+                ).setSectionResizeMode(0,
+                                       QHeaderView.ResizeMode.ResizeToContents)
+        self.ui.twStages.verticalHeader(
+                ).setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+
+        self.ui.twActivities.horizontalHeader(
+                ).setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
+        self.ui.twActivities.horizontalHeader(
+                ).setSectionResizeMode(2,
+                                       QHeaderView.ResizeMode.ResizeToContents)
+        self.ui.twActivities.verticalHeader(
+                ).setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
 
     def updateSize(self):
         self.cocomo.set_size(self.ui.sbSize.value())

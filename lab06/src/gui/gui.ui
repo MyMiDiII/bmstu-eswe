@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1751</width>
-    <height>786</height>
+    <width>2474</width>
+    <height>850</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_6">
-    <item row="0" column="0" rowspan="3">
+    <item row="0" column="0" rowspan="5">
      <widget class="QGroupBox" name="gbDrivers">
       <property name="font">
        <font>
@@ -26,6 +26,21 @@
        <string>Настройки модели COCOMO</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_5">
+       <property name="leftMargin">
+        <number>2</number>
+       </property>
+       <property name="topMargin">
+        <number>2</number>
+       </property>
+       <property name="rightMargin">
+        <number>2</number>
+       </property>
+       <property name="bottomMargin">
+        <number>2</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
        <item row="1" column="0">
         <widget class="QGroupBox" name="gbComputer">
          <property name="sizePolicy">
@@ -1512,7 +1527,7 @@
     <item row="1" column="1">
      <widget class="QGroupBox" name="gbResultsGeneral">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -1526,6 +1541,21 @@
        <string>Расчеты</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_8">
+       <property name="leftMargin">
+        <number>2</number>
+       </property>
+       <property name="topMargin">
+        <number>2</number>
+       </property>
+       <property name="rightMargin">
+        <number>2</number>
+       </property>
+       <property name="bottomMargin">
+        <number>2</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
        <item row="0" column="0">
         <widget class="QGroupBox" name="gbEffort">
          <property name="font">
@@ -1537,33 +1567,60 @@
           <string>Трудозатраты</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_9">
-          <item row="6" column="0">
-           <widget class="QLabel" name="lblEffortTotal">
-            <property name="text">
-             <string>Всего</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0" colspan="2">
-           <widget class="Line" name="line01">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QDoubleSpinBox" name="dsbEffortPlan">
+          <property name="leftMargin">
+           <number>4</number>
+          </property>
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <property name="rightMargin">
+           <number>4</number>
+          </property>
+          <property name="bottomMargin">
+           <number>4</number>
+          </property>
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item row="1" column="3">
+           <widget class="QDoubleSpinBox" name="dsbEffortBase">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="maximumSize">
              <size>
-              <width>225</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
             <property name="maximum">
              <double>10000.000000000000000</double>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="3">
+           <widget class="QLabel" name="lblEffortBase">
+            <property name="text">
+             <string>Трудозатраты</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblC1">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>30</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>C1</string>
             </property>
            </widget>
           </item>
@@ -1574,34 +1631,20 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>225</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
            </widget>
           </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="lblEffortBase">
-            <property name="text">
-             <string>Трудозатраты</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="0">
-           <widget class="QLabel" name="lblEffortPlan">
-            <property name="text">
-             <string>+ Планирование (8%)</string>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="1">
+          <item row="1" column="6">
            <widget class="QDoubleSpinBox" name="dsbEffortTotal">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="maximumSize">
              <size>
-              <width>225</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
@@ -1610,14 +1653,40 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
-           <widget class="QDoubleSpinBox" name="dsbEffortBase">
+          <item row="1" column="0">
+           <widget class="QLabel" name="lblP1">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>30</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>P1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="5">
+           <widget class="QLabel" name="lblEffortPlan">
+            <property name="text">
+             <string>+8%</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="5">
+           <widget class="QDoubleSpinBox" name="dsbEffortPlan">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="maximumSize">
              <size>
-              <width>225</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
@@ -1626,17 +1695,10 @@
             </property>
            </widget>
           </item>
-          <item row="5" column="0" colspan="2">
-           <widget class="Line" name="line02">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLabel" name="lblC1">
+          <item row="0" column="6">
+           <widget class="QLabel" name="lblEffortTotal">
             <property name="text">
-             <string>C1</string>
+             <string>Всего</string>
             </property>
            </widget>
           </item>
@@ -1647,16 +1709,16 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>225</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="lblP1">
-            <property name="text">
-             <string>P1</string>
+          <item row="0" column="2" rowspan="2">
+           <widget class="Line" name="line">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
             </property>
            </widget>
           </item>
@@ -1674,16 +1736,34 @@
           <string>Время</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_10">
-          <item row="0" column="1">
-           <widget class="QDoubleSpinBox" name="dsbC2">
+          <property name="leftMargin">
+           <number>4</number>
+          </property>
+          <property name="topMargin">
+           <number>4</number>
+          </property>
+          <property name="rightMargin">
+           <number>4</number>
+          </property>
+          <property name="bottomMargin">
+           <number>4</number>
+          </property>
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item row="1" column="3">
+           <widget class="QDoubleSpinBox" name="dsbTimeBase">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="maximumSize">
              <size>
-              <width>225</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
+            </property>
+            <property name="maximum">
+             <double>10000.000000000000000</double>
             </property>
            </widget>
           </item>
@@ -1694,50 +1774,60 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>225</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
            </widget>
           </item>
-          <item row="4" column="0">
+          <item row="0" column="4">
            <widget class="QLabel" name="lblTimePlan">
             <property name="text">
-             <string>+ Планирование (36%)</string>
+             <string>+36%</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
-           <widget class="QDoubleSpinBox" name="dsbTimeBase">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>225</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="maximum">
-             <double>10000.000000000000000</double>
+          <item row="0" column="5">
+           <widget class="QLabel" name="lblTimeTotal">
+            <property name="text">
+             <string>Всего</string>
             </property>
            </widget>
           </item>
           <item row="0" column="0">
            <widget class="QLabel" name="lblC2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>30</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="text">
              <string>C2</string>
             </property>
            </widget>
           </item>
-          <item row="6" column="1">
+          <item row="0" column="3">
+           <widget class="QLabel" name="lblTimeBase">
+            <property name="text">
+             <string>Время</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="5">
            <widget class="QDoubleSpinBox" name="dsbTimeTotal">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="maximumSize">
              <size>
-              <width>225</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
@@ -1746,21 +1836,27 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="0" colspan="2">
-           <widget class="Line" name="line03">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+          <item row="0" column="1">
+           <widget class="QDoubleSpinBox" name="dsbC2">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
             </property>
            </widget>
           </item>
-          <item row="4" column="1">
+          <item row="1" column="4">
            <widget class="QDoubleSpinBox" name="dsbTimePlan">
             <property name="enabled">
              <bool>false</bool>
             </property>
             <property name="maximumSize">
              <size>
-              <width>225</width>
+              <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
@@ -1771,30 +1867,377 @@
           </item>
           <item row="1" column="0">
            <widget class="QLabel" name="lblP2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>30</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="text">
              <string>P2</string>
             </property>
            </widget>
           </item>
-          <item row="6" column="0">
-           <widget class="QLabel" name="lblTimeTotal">
-            <property name="text">
-             <string>Всего</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="lblTimeBase">
-            <property name="text">
-             <string>Время</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="0" colspan="2">
-           <widget class="Line" name="line04">
+          <item row="0" column="2" rowspan="2">
+           <widget class="Line" name="line_2">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Vertical</enum>
             </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="title">
+       <string>Распределение работ</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_14">
+       <property name="leftMargin">
+        <number>2</number>
+       </property>
+       <property name="topMargin">
+        <number>2</number>
+       </property>
+       <property name="rightMargin">
+        <number>2</number>
+       </property>
+       <property name="bottomMargin">
+        <number>2</number>
+       </property>
+       <property name="spacing">
+        <number>4</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QGroupBox" name="gbStages">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="title">
+          <string>По стадиям жизненного цикла</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_15">
+          <property name="leftMargin">
+           <number>2</number>
+          </property>
+          <property name="topMargin">
+           <number>2</number>
+          </property>
+          <property name="rightMargin">
+           <number>2</number>
+          </property>
+          <property name="bottomMargin">
+           <number>2</number>
+          </property>
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QTableWidget" name="twStages">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>275</height>
+             </size>
+            </property>
+            <row>
+             <property name="text">
+              <string>Планирование и определение требований</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Проектирование продукта </string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Детальное проектирование</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Кодирование и тестирование модулей</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Интеграция и тестирование </string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ИТОГО (без планирования)</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>ИТОГО</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Трудозатраты (%)</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Трудозатраты</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Время (%)</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Время</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>(+8)</string>
+             </property>
+            </item>
+            <item row="0" column="2">
+             <property name="text">
+              <string>(+36)</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>18</string>
+             </property>
+            </item>
+            <item row="1" column="2">
+             <property name="text">
+              <string>36</string>
+             </property>
+            </item>
+            <item row="2" column="0">
+             <property name="text">
+              <string>25</string>
+             </property>
+            </item>
+            <item row="2" column="2">
+             <property name="text">
+              <string>18</string>
+             </property>
+            </item>
+            <item row="3" column="0">
+             <property name="text">
+              <string>26</string>
+             </property>
+            </item>
+            <item row="3" column="2">
+             <property name="text">
+              <string>18</string>
+             </property>
+            </item>
+            <item row="4" column="0">
+             <property name="text">
+              <string>31</string>
+             </property>
+            </item>
+            <item row="4" column="2">
+             <property name="text">
+              <string>28</string>
+             </property>
+            </item>
+            <item row="5" column="0">
+             <property name="text">
+              <string>100</string>
+             </property>
+            </item>
+            <item row="5" column="2">
+             <property name="text">
+              <string>100</string>
+             </property>
+            </item>
+            <item row="6" column="0">
+             <property name="text">
+              <string>108</string>
+             </property>
+            </item>
+            <item row="6" column="2">
+             <property name="text">
+              <string>136</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QGroupBox" name="gbActivities">
+         <property name="title">
+          <string>По видам деятельности</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_16">
+          <property name="leftMargin">
+           <number>2</number>
+          </property>
+          <property name="topMargin">
+           <number>2</number>
+          </property>
+          <property name="rightMargin">
+           <number>2</number>
+          </property>
+          <property name="bottomMargin">
+           <number>2</number>
+          </property>
+          <property name="spacing">
+           <number>4</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QTableWidget" name="twActivities">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>350</height>
+             </size>
+            </property>
+            <row>
+             <property name="text">
+              <string>Анализ требований </string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Проектирование продукта </string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Программирование </string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Тестирование</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Верификация и аттестация</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Канцелярия проекта</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Управление конфигурацией и обеспечение качества</string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Создание руководств </string>
+             </property>
+            </row>
+            <row>
+             <property name="text">
+              <string>Итого</string>
+             </property>
+            </row>
+            <column>
+             <property name="text">
+              <string>Бюджет (%)</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Чел.-месяцы</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Затраты (тыс. руб)</string>
+             </property>
+            </column>
+            <item row="0" column="0">
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item row="1" column="0">
+             <property name="text">
+              <string>12</string>
+             </property>
+            </item>
+            <item row="2" column="0">
+             <property name="text">
+              <string>44</string>
+             </property>
+            </item>
+            <item row="3" column="0">
+             <property name="text">
+              <string>6</string>
+             </property>
+            </item>
+            <item row="4" column="0">
+             <property name="text">
+              <string>14</string>
+             </property>
+            </item>
+            <item row="5" column="0">
+             <property name="text">
+              <string>7</string>
+             </property>
+            </item>
+            <item row="6" column="0">
+             <property name="text">
+              <string>7</string>
+             </property>
+            </item>
+            <item row="7" column="0">
+             <property name="text">
+              <string>6</string>
+             </property>
+            </item>
+            <item row="8" column="0">
+             <property name="text">
+              <string>100</string>
+             </property>
+            </item>
            </widget>
           </item>
          </layout>
