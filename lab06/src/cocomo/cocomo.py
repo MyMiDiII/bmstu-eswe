@@ -83,3 +83,31 @@ class Cocomo:
 
     def set_size(self, size):
         self.size = size
+
+    def get_employees(self):
+        if self.time_base == 0:
+            return [], [], []
+
+        effort = self.effort_base
+        time = self.time_base
+
+        times = [
+            0.36 * time,
+            0.36 * time,
+            0.18 * time,
+            0.18 * time,
+            0.28 * time
+        ]
+
+        efforts = [
+            0.08 * effort,
+            0.18 * effort,
+            0.25 * effort,
+            0.26 * effort,
+            0.31 * effort
+        ]
+
+        employees = [int(e / t) + 1 for t, e in zip(times, efforts)]
+
+        return employees, efforts, times
+

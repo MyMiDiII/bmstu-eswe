@@ -4,6 +4,9 @@ from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QHeaderView, QTableWidgetItem
 from gui.mainwindow import Ui_MainWindow
 
+import matplotlib.pyplot as plt
+plt.rcParams.update({'font.size' : 16, 'lines.linewidth' : 2})
+
 from cocomo.constants import *
 from cocomo.cocomo import *
 from study.study import *
@@ -85,6 +88,33 @@ class MainWindow(QtWidgets.QMainWindow):
         self.ui.twActivities.verticalHeader(
                 ).setSectionResizeMode(QHeaderView.ResizeMode.Stretch)
 
+        self.ui.btnEmployees.clicked.connect(self.buildChart)
+
+    def buildChart(self):
+
+        def addlabels(months, empls):
+            for m, e in zip(months, empls):
+                plt.text(m, e, e)
+
+        employees, _, times = self.cocomo.get_employees()
+
+        months = []
+        numbers = []
+        for e, t in zip(employees, times):
+            prev = len(months)
+            duration = int(round(t))
+
+            months.extend([i + prev + 1 for i in range(duration)])
+            numbers.extend([e for i in range(duration)])
+
+        plt.bar(months, numbers)
+        plt.xlabel("Месяц")
+        plt.xticks(months)
+        plt.ylabel("Число привлеченных сотрудников")
+        addlabels(months, numbers)
+        plt.show()
+
+
     def updateTables(self):
         results = self.cocomo.get_results()
         effort_base = results["effort_base"]
@@ -92,10 +122,13 @@ class MainWindow(QtWidgets.QMainWindow):
         effort_total = results["effort_total"]
 
         table = self.ui.twStages
+        efforts = []
         for row in range(table.rowCount()):
             proc = int(table.item(row, 0).text())
-            item = QTableWidgetItem("{:.2f}".format(effort_base * proc / 100))
+            effort = effort_base * proc / 100
+            item = QTableWidgetItem("{:.2f}".format(effort))
             table.setItem(row, 1, item)
+            efforts.append(effort)
 
             proc = int(table.item(row, 2).text())
             item = QTableWidgetItem("{:.2f}".format(time_base * proc / 100))
@@ -106,6 +139,21 @@ class MainWindow(QtWidgets.QMainWindow):
             proc = int(table.item(row, 0).text())
             item = QTableWidgetItem("{:.2f}".format(effort_total * proc / 100))
             table.setItem(row, 1, item)
+
+        #analyst     = 160000
+        #manager     = 140000
+        #architect   = 250000
+        #teamlead    = 220000
+        #developer   = 165000
+        #qa_engineer = 150000
+
+        #stages_prices = {
+        #        "plan" : ,
+        #        "design-high" : ,
+        #        "design-low" :,
+        #        "code-test" : ,
+        #        "integration-test":
+        #        }
 
     def updateSize(self):
         self.cocomo.set_size(self.ui.sbSize.value())
