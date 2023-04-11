@@ -134,18 +134,26 @@ class MainWindow(QtWidgets.QMainWindow):
             item = QTableWidgetItem("{:.2f}".format(time_base * proc / 100))
             table.setItem(row, 3, item)
 
+        analyst     = 160000
+        manager     = 140000
+        architect   = 250000
+        teamlead    = 220000
+        developer   = 165000
+        qa_engineer = 150000
+
+        price = (analyst + manager + architect + teamlead + developer +
+                 qa_engineer) / 6 / 1000
+
         table = self.ui.twActivities
         for row in range(table.rowCount()):
             proc = int(table.item(row, 0).text())
-            item = QTableWidgetItem("{:.2f}".format(effort_total * proc / 100))
+            effort = effort_total * proc / 100
+            item = QTableWidgetItem("{:.2f}".format(effort))
             table.setItem(row, 1, item)
 
-        #analyst     = 160000
-        #manager     = 140000
-        #architect   = 250000
-        #teamlead    = 220000
-        #developer   = 165000
-        #qa_engineer = 150000
+            item = QTableWidgetItem("{:.2f}".format(effort * price))
+            table.setItem(row, 2, item)
+
 
         #stages_prices = {
         #        "plan" : ,
