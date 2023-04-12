@@ -1,4 +1,8 @@
+# Маслова Марина ИУ7-83Б, 2023г
+# https://github.com/MyMiDiII
+
 import numpy as np
+
 
 COEFS = np.array([
     [3,  4,  6],
